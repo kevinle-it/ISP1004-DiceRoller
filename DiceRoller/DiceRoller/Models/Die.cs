@@ -26,6 +26,13 @@ namespace DiceRoller.Models
             Roll();
         }
 
+        public Die(int numSides, string name)
+        {
+            Name = name;
+            NumSides = numSides;
+            Roll();
+        }
+
         public void Roll()
         {
             Random r = new Random();

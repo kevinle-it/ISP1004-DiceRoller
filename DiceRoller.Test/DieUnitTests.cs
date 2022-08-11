@@ -30,12 +30,29 @@ namespace DiceRoller.Test
         }
 
         [TestMethod]
-        public void RollSetsSideCorrectly()
+        public void DefaultRollSetsSideCorrectly()
         {
             for (int i = 0; i < 1000; i++)
             {
                 def.Roll();
                 def.CurrentSide.Should().BeInRange(1, 6);
+            }
+        }
+
+        [TestMethod]
+        [DataRow(3)]
+        [DataRow(4)]
+        [DataRow(8)]
+        [DataRow(10)]
+        [DataRow(12)]
+        [DataRow(20)]
+        public void RollSetsSideCorrectlyForCustomSides(int sides)
+        {
+            Die d = new Die(sides);
+            for (int i = 0; i < 1000; i++)
+            {
+                d.Roll();
+                d.CurrentSide.Should().BeInRange(1, sides);
             }
         }
 
@@ -55,9 +72,18 @@ namespace DiceRoller.Test
         }
 
         [TestMethod]
-        public void DieHasCustomName()
+        [DataRow(3, "a")]
+        [DataRow(4, "b")]
+        [DataRow(8, "c")]
+        [DataRow(10, "d")]
+        [DataRow(12, "e")]
+        [DataRow(20, "f")]
+        public void DieHasCustomName(int sides, string name)
         {
-            // not implemented
+            Die d = new Die(sides, name);
+            d.Name.Should().Be(name);
+            d.NumSides.Should().Be(sides);
+            d.CurrentSide.Should().BeInRange(1, sides);
         }
 
         [TestMethod]
