@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRoller.Android", "DiceR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRoller", "DiceRoller\DiceRoller\DiceRoller.csproj", "{56A1F398-4699-4DBD-8B15-BB65666B681C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRoller.Test", "DiceRoller.Test\DiceRoller.Test.csproj", "{EA5EC27E-05AB-4D5C-968B-5A2957A111B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{56A1F398-4699-4DBD-8B15-BB65666B681C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A1F398-4699-4DBD-8B15-BB65666B681C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A1F398-4699-4DBD-8B15-BB65666B681C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5EC27E-05AB-4D5C-968B-5A2957A111B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5EC27E-05AB-4D5C-968B-5A2957A111B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5EC27E-05AB-4D5C-968B-5A2957A111B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5EC27E-05AB-4D5C-968B-5A2957A111B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
