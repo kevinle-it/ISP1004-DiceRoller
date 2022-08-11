@@ -19,11 +19,14 @@ namespace DiceRoller.Models
             Roll();
         }
 
-        public Die(int numSides)
+        public Die(int numSides) : this()
         {
-            Name = "d" + numSides;
-            NumSides = numSides;
-            Roll();
+            if (numSides >= 1)
+            {
+                Name = "d" + numSides;
+                NumSides = numSides;
+                Roll();
+            }
         }
 
         public Die(int numSides, string name)
@@ -31,6 +34,14 @@ namespace DiceRoller.Models
             Name = name;
             NumSides = numSides;
             Roll();
+        }
+
+        public void SetSideUp(int newSideUp)
+        {
+            if (newSideUp >= 1 && newSideUp <= NumSides)
+            {
+                CurrentSide = newSideUp;
+            }
         }
 
         public void Roll()

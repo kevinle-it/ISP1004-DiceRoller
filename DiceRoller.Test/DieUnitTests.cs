@@ -57,16 +57,16 @@ namespace DiceRoller.Test
         }
 
         [TestMethod]
-        [DataRow(3)]
-        [DataRow(4)]
-        [DataRow(8)]
-        [DataRow(10)]
-        [DataRow(12)]
-        [DataRow(20)]
-        public void DieHasCustomSides(int sides)
+        [DataRow(3, "d3")]
+        [DataRow(4, "d4")]
+        [DataRow(8, "d8")]
+        [DataRow(10, "d10")]
+        [DataRow(12, "d12")]
+        [DataRow(20, "d20")]
+        public void DieHasCustomSides(int sides, string name)
         {
             Die d = new Die(sides);
-            d.Name.Should().Be("d" + sides);
+            d.Name.Should().Be(name);
             d.NumSides.Should().Be(sides);
             d.CurrentSide.Should().BeInRange(1, sides);
         }
@@ -87,15 +87,53 @@ namespace DiceRoller.Test
         }
 
         [TestMethod]
-        public void SetSideUpChangesSide()
+        [DataRow(3, 2)]
+        [DataRow(4, 2)]
+        [DataRow(8, 2)]
+        [DataRow(10, 2)]
+        [DataRow(12, 2)]
+        [DataRow(20, 2)]
+        public void SetSideUpChangesSide(int sides, int newSide)
         {
-            // not implemented
+            Die d = new Die(sides);
+            d.SetSideUp(newSide);
+            d.CurrentSide.Should().Be(newSide);
         }
 
         [TestMethod]
-        public void NumSidesShouldNotBeNegative()
+        [DataRow(3, -1)]
+        [DataRow(4, 0)]
+        [DataRow(8, 3)]
+        [DataRow(10, 5)]
+        [DataRow(12, 15)]
+        [DataRow(20, 20)]
+        public void SetSideUpSetsValidSide(int sides, int newSide)
         {
-            // not implemented
+            Die d = new Die(sides);
+            d.SetSideUp(newSide);
+            if (newSide < 1 || newSide > sides)
+            {
+                d.CurrentSide.Should().BeInRange(1, sides);
+            }
+            else
+            {
+                d.CurrentSide.Should().Be(newSide);
+            }
+        }
+
+        [TestMethod]
+        [DataRow(-6, "d6", 6)]
+        [DataRow(-3, "d6", 6)]
+        [DataRow(0, "d6", 6)]
+        [DataRow(10, "d10", 10)]
+        [DataRow(12, "d12", 12)]
+        [DataRow(20, "d20", 20)]
+        public void NumSidesShouldNotBeNegative(int sides, string name, int expectedNumSides)
+        {
+            Die d = new Die(sides);
+            d.Name.Should().Be(name);
+            d.NumSides.Should().Be(expectedNumSides);
+            d.CurrentSide.Should().BeInRange(1, expectedNumSides);
         }
     }
 }
