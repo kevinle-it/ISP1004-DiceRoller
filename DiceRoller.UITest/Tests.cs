@@ -31,9 +31,9 @@ namespace DiceRoller.UITest
         //}
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void PromptLabelIsDisplayed()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
+            AppResult[] results = app.WaitForElement(c => c.Marked("Select a die:"));
 
             Assert.IsTrue(results.Any());
         }
