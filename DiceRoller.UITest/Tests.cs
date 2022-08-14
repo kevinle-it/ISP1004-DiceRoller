@@ -8,7 +8,6 @@ using Xamarin.UITest.Queries;
 namespace DiceRoller.UITest
 {
     [TestFixture(Platform.Android)]
-    [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;
@@ -25,10 +24,10 @@ namespace DiceRoller.UITest
             app = AppInitializer.StartApp(platform);
         }
 
-        [Test]
-        public void AppLaunches()
-        {
-            app.Screenshot("First screen.");
-        }
+        //[Test]
+        //public void AppLaunches()
+        //{
+        //    app.Screenshot("First screen.");
+        //}
     }
 }
