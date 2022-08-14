@@ -29,5 +29,13 @@ namespace DiceRoller.UITest
         //{
         //    app.Screenshot("First screen.");
         //}
+
+        [Test]
+        public void WelcomeTextIsDisplayed()
+        {
+            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
+
+            Assert.IsTrue(results.Any());
+        }
     }
 }
