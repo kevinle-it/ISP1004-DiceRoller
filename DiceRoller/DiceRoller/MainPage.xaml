@@ -16,8 +16,8 @@
 
         <Button Text="Display one result" Clicked="DisplayOne" />
         <Button Text="Display two results" Clicked="DisplayTwo" />
-        <Label x:Name="Result1" />
-        <Label x:Name="Result2" IsVisible="False" />
+        <Label x:Name="Result1" AutomationId="Die_Rolling_Result_1" />
+        <Label x:Name="Result2" AutomationId="Die_Rolling_Result_2" IsVisible="False" />
     </StackLayout>
 
 </ContentPage>
