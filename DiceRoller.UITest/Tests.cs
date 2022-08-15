@@ -82,5 +82,18 @@ namespace DiceRoller.UITest
                 .Equals(false)           // check that the view is checked (checked == false)
             );
         }
+
+        [Test]
+        [Category("UI")]
+        public void RollButtonsAreDisplayed()
+        {
+            //Assert.IsTrue(app.Query("Display one result").Any());
+            //Assert.IsTrue(app.Query("Display two results").Any());
+
+            AppResult[] results = app.Query(c => c.Property("text").Like("Display * result*"));
+            //AppResult[] results = app.Query(c => c.Property("text").Contains("Display "));
+            //AppResult[] results = app.Query(c => c.Property("text").StartsWith("Display "));
+            Assert.IsTrue(results.Length == 2);
+        }
     }
 }

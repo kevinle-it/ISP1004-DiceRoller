@@ -13,6 +13,9 @@
             <RadioButton Content="d12" />
             <RadioButton Content="d20" />
         </StackLayout>
+
+        <Button Text="Display one result" />
+        <Button Text="Display two results" />
     </StackLayout>
 
 </ContentPage>
