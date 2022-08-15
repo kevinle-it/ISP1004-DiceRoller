@@ -6,16 +6,18 @@
     <StackLayout>
         <StackLayout RadioButtonGroup.GroupName="Dice">
             <Label Text="Select a die:" />
-            <RadioButton Content="d4" />
-            <RadioButton Content="d6" />
-            <RadioButton Content="d8" />
-            <RadioButton Content="d10" />
-            <RadioButton Content="d12" />
-            <RadioButton Content="d20" />
+            <RadioButton Content="d4" Value="4" CheckedChanged="RadioButton_CheckedChanged" IsChecked="True" />
+            <RadioButton Content="d6" Value="6" CheckedChanged="RadioButton_CheckedChanged" />
+            <RadioButton Content="d8" Value="8" CheckedChanged="RadioButton_CheckedChanged" />
+            <RadioButton Content="d10" Value="10" CheckedChanged="RadioButton_CheckedChanged" />
+            <RadioButton Content="d12" Value="12" CheckedChanged="RadioButton_CheckedChanged" />
+            <RadioButton Content="d20" Value="20" CheckedChanged="RadioButton_CheckedChanged" />
         </StackLayout>
 
-        <Button Text="Display one result" />
-        <Button Text="Display two results" />
+        <Button Text="Display one result" Clicked="DisplayOne" />
+        <Button Text="Display two results" Clicked="DisplayTwo" />
+        <Label x:Name="Result1" />
+        <Label x:Name="Result2" IsVisible="False" />
     </StackLayout>
 
 </ContentPage>
